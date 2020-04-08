@@ -51,4 +51,31 @@ struct TextFormView: View {
     }
 }
 
-PlaygroundPage.current.setLiveView(TextFormView())
+struct LoopingForm: View {
+    var body: some View {
+        Form {
+            ForEach(0 ..< 100) { number in
+                Text("Row \(number)")
+            }
+        }
+    }
+}
+
+struct CreatePickerView: View {
+    let students = ["Harry", "Hermione", "Ron"]
+    @State private var selectedStudent = 0
+
+    var body: some View {
+        VStack {
+            Picker("Select your student", selection: $selectedStudent) {
+                ForEach(0 ..< students.count) {
+                    Text(self.students[$0])
+                }
+            }
+            Text("You chose: Student # \(students[selectedStudent])")
+        }
+    }
+}
+
+
+PlaygroundPage.current.setLiveView(CreatePickerView())

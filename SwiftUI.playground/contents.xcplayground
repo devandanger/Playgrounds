@@ -3,5 +3,6 @@
     <pages>
         <page name='Scratch'/>
         <page name='Day16'/>
+        <page name='Day16-WeSplit'/>
     </pages>
 </playground>
